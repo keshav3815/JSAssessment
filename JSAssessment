@@ -1,0 +1,42 @@
+/*
+Has the ability to "mint" NFTs and store them
+You should "mint" at least three NFT's
+Has the ability to print the details of your NFTs to the console
+Has the ability to print the total supply of your NFT collection to the console
+
+*/
+
+
+const NFTs = []
+function mintNFT (_name, _TokenSymbol, _TotalSupply, _MarketcapETH )
+{
+    const NFT ={
+         "name" : _name ,
+         "TokenSymbol": _TokenSymbol,
+         "TotalSupply": _TotalSupply,
+         "MarketcapETH": _MarketcapETH
+    }
+    NFTs.push(NFT);
+    console.log("Minted :" + _name);
+}
+function detailsNFTs()
+{
+    for (let i=0; i<NFTs.length; i++)
+        {
+            console.log("\n ID: \t" + (i + 101));
+            console.log(" Name: \t" +  NFTs[i].name);
+            console.log(" TokenSymbol: \t" +  NFTs[i].TokenSymbol);
+            console.log(" TotalSupply: \t" +  NFTs[i].TotalSupply);
+            console.log(" MarketcapETH: \t" +  NFTs[i].MarketcapETH);
+        }
+}
+function TotalSupply()
+{
+ console.log(NFTs.length);
+}
+mintNFT("CryptoPunks", "PUNK", "9,998", "779,585");
+mintNFT("Azuki", "AZUKI", "10,000", "151,259");
+mintNFT("VeeFriends", "VFT", "10,255", "59,195");
+ 
+detailsNFTs();
+TotalSupply();
